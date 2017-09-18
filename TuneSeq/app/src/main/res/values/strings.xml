@@ -11,7 +11,7 @@
     <string name="app_update">Under development.\nComing soon!</string>
 
     <!-- For Search Screen -->
-    <string name="search_hint">Search artist.</string>
+    <string name="search_hint">Search artist, tracks, etc...</string>
     <string name="search_empty">No artist name detected.\nTry again.</string>
     <string name="search_none">No artist name found.\nTry again.</string>
     <string name="search_button">Search</string>

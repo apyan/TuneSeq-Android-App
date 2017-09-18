@@ -8,13 +8,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#515d70">
 
         <EditText
             android:id="@+id/edittext_00"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            tools:ignore="LabelFor"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingLeft="10dp"
+            tools:ignore="LabelFor,RtlHardcoded,RtlSymmetry"
             android:hint="@string/search_hint"/>
 
         <Button
@@ -22,6 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:textSize="16sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:text="@string/search_button"
             android:onClick="onSearch"/>
 
