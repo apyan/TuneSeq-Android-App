@@ -1,0 +1,99 @@
+<resources>
+
+    <!-- For Title Screen -->
+    <string name="app_name">TuneSeq</string>
+
+    <string name="app_title_000">TuneSeq</string>
+    <string name="app_title_001"> </string>
+    <string name="app_credits"> </string>
+    <string name="app_prompt">Tap to Proceed</string>
+    <string name="app_kotlin">Kotlin Version</string>
+    <string name="app_update">Under development.\nComing soon!</string>
+
+    <!-- For Search Screen -->
+    <string name="search_hint">Search artist.</string>
+    <string name="search_empty">No artist name detected.\nTry again.</string>
+    <string name="search_none">No artist name found.\nTry again.</string>
+    <string name="search_button">Search</string>
+    <string name="search_button_fix">Search \'Michael Jackson\'</string>
+
+    <!-- For View Screen -->
+    <string name="section_01">Track Info</string>
+    <string name="sub_1_000">Type</string>
+    <string name="sub_1_001">Genre</string>
+    <string name="sub_1_002">Collection</string>
+    <string name="sub_1_003">Track</string>
+    <string name="sub_1_004">Duration</string>
+    <string name="sub_1_005">Release</string>
+
+    <string name="section_02">Track Label</string>
+    <string name="sub_2_000">Disc Count</string>
+    <string name="sub_2_001">Disc Number</string>
+    <string name="sub_2_002">Track Count</string>
+    <string name="sub_2_003">Track Number</string>
+    <string name="sub_2_004">Artist ID</string>
+    <string name="sub_2_005">Track ID</string>
+    <string name="sub_2_006">Collection ID</string>
+
+    <string name="section_03">iTunes Store</string>
+    <string name="sub_3_000">Track</string>
+    <string name="sub_3_001">Collection</string>
+
+    <string name="section_04">Links</string>
+    <string name="sub_4_000">About the Artist</string>
+    <string name="sub_4_001">About the Collection</string>
+    <string name="sub_4_002">About the Track</string>
+    <string name="sub_4_003">Track Sample</string>
+
+    <string name="empty_var">Empty</string>
+    <string name="duration_var">mins.</string>
+    <string name="back_button">Back</string>
+
+    <!-- For Processing Purposes -->
+    <string name="connect_000"></string>
+    <string name="connect_001">Connection not found.\nConnect and try again.</string>
+    <string name="loading_000">Searching Tracks</string>
+    <string name="loading_001">Searching tracks...\nPlease wait.</string>
+    <string name="loading_002">Loading</string>
+    <string name="loading_003">Loading info...\nPlease wait.</string>
+
+    <string name="desc_000">Image of artwork.</string>
+    <string name="desc_001">Track Name</string>
+    <string name="desc_002">Collection Name</string>
+    <string name="desc_003">Artist</string>
+
+    <!-- JSON Attributes -->
+    <string name="label_start">results</string>
+    <string name="label_000">wrapperType</string>
+    <string name="label_001">kind</string>
+    <string name="label_002">artistId</string>
+    <string name="label_003">collectionId</string>
+    <string name="label_004">trackId</string>
+    <string name="label_005">artistName</string>
+    <string name="label_006">collectionName</string>
+    <string name="label_007">trackName</string>
+    <string name="label_008">collectionCensoredName</string>
+    <string name="label_009">trackCensoredName</string>
+    <string name="label_010">artistViewUrl</string>
+    <string name="label_011">collectionViewUrl</string>
+    <string name="label_012">trackViewUrl</string>
+    <string name="label_013">previewUrl</string>
+    <string name="label_014">artworkUrl30</string>
+    <string name="label_015">artworkUrl60</string>
+    <string name="label_016">artworkUrl100</string>
+    <string name="label_017">collectionPrice</string>
+    <string name="label_018">trackPrice</string>
+    <string name="label_019">releaseDate</string>
+    <string name="label_020">collectionExplicitness</string>
+    <string name="label_021">trackExplicitness</string>
+    <string name="label_022">discCount</string>
+    <string name="label_023">discNumber</string>
+    <string name="label_024">trackCount</string>
+    <string name="label_025">trackNumber</string>
+    <string name="label_026">trackTimeMillis</string>
+    <string name="label_027">country</string>
+    <string name="label_028">currency</string>
+    <string name="label_029">primaryGenreName</string>
+    <string name="label_030">isStreamable</string>
+
+</resources>

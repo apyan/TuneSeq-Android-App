@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:gravity="top|left"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_custom_000"
+    tools:ignore="RtlHardcoded">
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        tools:ignore="RtlHardcoded">
+
+        <ImageView
+            android:id="@+id/image_000"
+            android:layout_height="70dp"
+            android:layout_width="70dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:contentDescription="@string/desc_000" />
+
+    </TableRow>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        tools:ignore="RtlHardcoded">
+
+        <TextView
+            android:id="@+id/text_000"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:text="@string/desc_001"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/text_001"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:text="@string/desc_002"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/text_002"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:text="@string/desc_003"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
