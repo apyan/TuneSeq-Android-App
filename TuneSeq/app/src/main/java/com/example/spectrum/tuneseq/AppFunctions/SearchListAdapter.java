@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * Adapter for the list view searching
  */
 
-public class SearchListAdapter  extends BaseAdapter {
+public class SearchListAdapter extends BaseAdapter {
 
     // Variables for the adapter
     public static LayoutInflater inflater = null;
