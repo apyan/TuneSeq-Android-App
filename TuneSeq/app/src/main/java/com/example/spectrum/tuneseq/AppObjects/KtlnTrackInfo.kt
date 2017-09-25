@@ -89,7 +89,7 @@ class KtlnTrackInfo : Parcelable {
     }
 
     // For Creator
-    private fun TrackInfo(`in` : Parcel) {
+    private fun KtlnTrackInfo(`in` : Parcel) {
         this.wrapperType = `in`.readString()
         this.kind = `in`.readString()
         this.artistId = `in`.readInt()
@@ -120,12 +120,12 @@ class KtlnTrackInfo : Parcelable {
         this.primaryGenreName = `in`.readString()
     }
 
-    val CREATOR: Parcelable.Creator<TrackInfo> = object : Parcelable.Creator<TrackInfo> {
-        override fun createFromParcel(source: Parcel): TrackInfo {
-            return TrackInfo(source) as TrackInfo
+    val CREATOR: Parcelable.Creator<KtlnTrackInfo> = object : Parcelable.Creator<KtlnTrackInfo> {
+        override fun createFromParcel(source: Parcel): KtlnTrackInfo {
+            return KtlnTrackInfo(source) as KtlnTrackInfo
         }
 
-        override fun newArray(size: Int): Array<TrackInfo ?> {
+        override fun newArray(size: Int): Array<KtlnTrackInfo ?> {
             return arrayOfNulls(size)
         }
     }

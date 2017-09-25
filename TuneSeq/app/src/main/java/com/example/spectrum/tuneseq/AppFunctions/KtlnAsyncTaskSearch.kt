@@ -6,9 +6,7 @@ import android.os.AsyncTask
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.Toast
-import com.example.spectrum.tuneseq.AppObjects.BitmapObject
-import com.example.spectrum.tuneseq.AppObjects.HttpObject
-import com.example.spectrum.tuneseq.AppObjects.TrackInfo
+import com.example.spectrum.tuneseq.AppObjects.*
 import com.example.spectrum.tuneseq.R
 import org.json.JSONException
 import org.json.JSONObject
@@ -21,21 +19,21 @@ import java.util.ArrayList
  * Asynchronous Task for the Search List View
  */
 
-class KtlnAsyncTaskSearch constructor(context: Context, listView: ListView)
+class KtlnAsyncTaskSearch constructor(context: Context ?, listView: ListView ?)
     : AsyncTask<String, String, String>() {
 
     // Variables of the Asynchronous Task
     private val errorMessage = ""
-    var asyncConnect: AppConnect ? = null
+    var asyncConnect: KtlnAppConnect ? = null
     var eContext: Context ? = null
     internal var progressDialog: ProgressDialog ? = null
-    var tracksFound: ArrayList<TrackInfo>
-    var list_00: ListView
+    var tracksFound: ArrayList<KtlnTrackInfo>
+    var list_00: ListView ? = null
 
     // Constructor
     init {
         eContext = context
-        asyncConnect = AppConnect(eContext)
+        asyncConnect = KtlnAppConnect(eContext)
         tracksFound = ArrayList()
         list_00 = listView
     }
@@ -49,7 +47,7 @@ class KtlnAsyncTaskSearch constructor(context: Context, listView: ListView)
     override fun doInBackground(vararg params: String): String {
 
         // Initiates JSON source
-        val httpObject = HttpObject()
+        val httpObject = KtlnHttpObject()
         val jsonString = httpObject.makeServiceCall(params[0])
 
         if (jsonString != null) {
@@ -66,7 +64,7 @@ class KtlnAsyncTaskSearch constructor(context: Context, listView: ListView)
 
                     // Gather data nodes
                     val resultObj = resultArray.getJSONObject(index)
-                    val resultTrack = TrackInfo()
+                    val resultTrack = KtlnTrackInfo()
 
                     // Obtains data from the track
                     resultTrack.wrapperType = resultObj.getString(eContext ?.resources ?.getString(R.string.label_000))
@@ -88,7 +86,8 @@ class KtlnAsyncTaskSearch constructor(context: Context, listView: ListView)
                     resultTrack.artworkUrl100 = resultObj.getString(eContext ?.resources ?.getString(R.string.label_016))
 
                     // Downloading the JPG into BitMap, and resize to 75 x 75
-                    val bitmapObject = BitmapObject()
+                    var bitmapObject : KtlnBitmapObject ? = null
+                    bitmapObject = KtlnBitmapObject()
                     resultTrack.artIcon = bitmapObject.getBitmapFromURL(resultTrack.artworkUrl100)
                     resultTrack.artIcon = bitmapObject.getResizedBitmap(resultTrack.artIcon, 100, 100)
                     resultTrack.artIcon70 = bitmapObject.getResizedBitmap(resultTrack.artIcon, 70, 70)
@@ -129,7 +128,7 @@ class KtlnAsyncTaskSearch constructor(context: Context, listView: ListView)
     override fun onPostExecute(args: String) {
 
         // Populate ListView
-        list_00.adapter = SearchListAdapter(eContext, tracksFound)
+        list_00 ?.adapter = KtlnSearchListAdapter(eContext, tracksFound)
 
         // Checks for the result amount
         if (tracksFound ?.size == 0) {
@@ -154,7 +153,7 @@ class KtlnAsyncTaskSearch constructor(context: Context, listView: ListView)
     }
 
     // Kotlin Version
-    fun getTracksFoundKtln(): ArrayList<TrackInfo> {
+    fun getTracksFoundKtln(): ArrayList<KtlnTrackInfo> {
         return tracksFound
     }
 

@@ -13,12 +13,12 @@ import java.net.HttpURLConnection
 class KtlnBitmapObject {
 
     // Constructor
-    fun BitmapObject() {
+    fun KtlnBitmapObject() {
 
     }
 
     // Download image from a source
-    fun getBitmapFromURL(src: String): Bitmap? {
+    fun getBitmapFromURL(src: String?): Bitmap? {
         try {
             val url = java.net.URL(src)
             val connection = url
@@ -35,11 +35,11 @@ class KtlnBitmapObject {
     }
 
     // Used to prevent Out of Memory
-    fun getResizedBitmap(bm: Bitmap, newHeight: Int, newWidth: Int): Bitmap {
-        val width = bm.width
-        val height = bm.height
-        val scaleWidth = newWidth.toFloat() / width
-        val scaleHeight = newHeight.toFloat() / height
+    fun getResizedBitmap(bm: Bitmap?, newHeight: Int, newWidth: Int): Bitmap? {
+        val width = bm ?.width
+        val height = bm ?.height
+        val scaleWidth = newWidth.toFloat() / width as Int
+        val scaleHeight = newHeight.toFloat() / height as Int
 
         // CREATE A MATRIX FOR THE MANIPULATION
         val matrix = Matrix()

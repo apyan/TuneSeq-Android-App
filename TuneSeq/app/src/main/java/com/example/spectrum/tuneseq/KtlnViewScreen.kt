@@ -11,13 +11,15 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.spectrum.tuneseq.AppFunctions.AsyncTaskFirstView
+import com.example.spectrum.tuneseq.AppFunctions.KtlnAsyncTaskFirstView
+import com.example.spectrum.tuneseq.AppObjects.KtlnTrackInfo
 import com.example.spectrum.tuneseq.AppObjects.TrackInfo
 
 class KtlnViewScreen : Activity() {
 
     // Variables of the Activity (Kotlin)
     internal var context: Context ? = null
-    internal var trackInfo: TrackInfo ? = null
+    internal var trackInfo: KtlnTrackInfo? = null
     internal var image_00: ImageView ? = null
     internal var text_00 : TextView ? = null
     internal var text_01 : TextView ? = null
@@ -47,7 +49,7 @@ class KtlnViewScreen : Activity() {
         // Gather the track information
         //Intent intent = getIntent();
         //trackInfo = (TrackInfo) intent.getSerializableExtra("seekTrack");
-        trackInfo = intent.getParcelableExtra<Parcelable>("seekTrack") as TrackInfo ?
+        trackInfo = intent.getParcelableExtra<Parcelable>("seekTrack") as KtlnTrackInfo ?
 
         // Set up the XML UI attributes
         image_00 = findViewById<View>(R.id.image_000) as ImageView
@@ -71,7 +73,7 @@ class KtlnViewScreen : Activity() {
         info_05 = findViewById<View>(R.id.info_005) as TextView
 
         // Execute Asynchronous Task
-        val seeker = AsyncTaskFirstView(context, trackInfo, image_00)
+        val seeker = KtlnAsyncTaskFirstView(context, trackInfo, image_00)
         seeker.execute()
 
         // Set up track info

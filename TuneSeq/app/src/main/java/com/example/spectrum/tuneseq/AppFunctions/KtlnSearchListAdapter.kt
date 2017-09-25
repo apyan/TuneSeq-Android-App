@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.spectrum.tuneseq.AppObjects.KtlnTrackInfo
 import com.example.spectrum.tuneseq.AppObjects.TrackInfo
+import com.example.spectrum.tuneseq.KtlnViewScreen
 import com.example.spectrum.tuneseq.R
 import com.example.spectrum.tuneseq.ViewScreen
 import java.util.ArrayList
@@ -17,18 +19,18 @@ import java.util.ArrayList
  * Adapter for the list view searching
  */
 
-class KtlnSearchListAdapter constructor(context: Context, results: ArrayList<TrackInfo>) : BaseAdapter () {
+class KtlnSearchListAdapter constructor(context: Context ?, results: ArrayList<KtlnTrackInfo>) : BaseAdapter () {
 
     // Variables for the adapter
     var inflater: LayoutInflater? = null
-    var foundedTracks: ArrayList<TrackInfo>
-    internal var eContext: Context
+    var foundedTracks: ArrayList<KtlnTrackInfo>
+    internal var eContext: Context ? = null
 
     // Constructor
     init {
         eContext = context
         foundedTracks = results
-        inflater = eContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        inflater = eContext ?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
     }
 
     override fun getCount(): Int {
@@ -75,7 +77,7 @@ class KtlnSearchListAdapter constructor(context: Context, results: ArrayList<Tra
             // TODO Auto-generated method stub
 
             // Head to the viewing screen
-            val eIntent = Intent(eContext, ViewScreen::class.java)
+            val eIntent = Intent(eContext, KtlnViewScreen::class.java)
             eIntent.putExtra("seekTrack", foundedTracks[position])
             v.context.startActivity(eIntent)
         }

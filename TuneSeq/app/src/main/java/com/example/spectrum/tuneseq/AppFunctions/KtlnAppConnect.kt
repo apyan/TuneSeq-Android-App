@@ -7,13 +7,13 @@ import android.net.ConnectivityManager
  * This class is used for connection purposes.
  */
 
-class KtlnAppConnect {
+class KtlnAppConnect constructor(context: Context ?) {
 
     // Variables for the class
     internal var eContext: Context ? = null
 
     // Constructor
-    fun AppConnect(context: Context) {
+    init {
         eContext = context
     }
 

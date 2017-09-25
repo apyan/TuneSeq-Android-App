@@ -10,6 +10,9 @@ import android.widget.ListView
 import android.widget.Toast
 import com.example.spectrum.tuneseq.AppFunctions.AppConnect
 import com.example.spectrum.tuneseq.AppFunctions.AsyncTaskSearch
+import com.example.spectrum.tuneseq.AppFunctions.KtlnAppConnect
+import com.example.spectrum.tuneseq.AppFunctions.KtlnAsyncTaskSearch
+import com.example.spectrum.tuneseq.AppObjects.KtlnTrackInfo
 import com.example.spectrum.tuneseq.AppObjects.TrackInfo
 
 class KtlnSearchScreen : Activity() {
@@ -18,10 +21,10 @@ class KtlnSearchScreen : Activity() {
     internal var jsonURL : String = "https://itunes.apple.com/search?term="
     internal var jsonURLFix : String = "https://itunes.apple.com/search?term=Michael+jackson"
 
-    internal var searchConnect : AppConnect ? = null
+    internal var searchConnect : KtlnAppConnect? = null
     internal var context : Context ? = null
     internal var list_000 : ListView ? = null
-    internal var trackListing : ArrayList<TrackInfo> ? = null
+    internal var trackListing : ArrayList<KtlnTrackInfo> ? = null
     internal var editText_00 : EditText ? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,7 +33,7 @@ class KtlnSearchScreen : Activity() {
 
         context = this
         trackListing = java.util.ArrayList()
-        searchConnect = AppConnect(context)
+        searchConnect = KtlnAppConnect(context)
         list_000 = findViewById<View>(R.id.listView_00) as ListView
         editText_00 = findViewById<View>(R.id.edittext_00) as EditText
     }
@@ -56,9 +59,9 @@ class KtlnSearchScreen : Activity() {
         seekQuery = seekQuery.replace(' ', '+')
 
         // Execute Asynchronous Task
-        val seeker = AsyncTaskSearch(context, list_000)
+        val seeker = KtlnAsyncTaskSearch(context, list_000)
         // seeker.execute(jsonURLFix);
         seeker.execute(jsonURL + seekQuery)
-        trackListing = seeker.getTracksFound()
+        trackListing = seeker.getTracksFoundKtln()
     }
 }

@@ -17,7 +17,7 @@ class KtlnHttpObject {
     private val TAG : String = ""
 
     // Constructor
-    fun HttpObject () {
+    fun KtlnHttpObject () {
 
     }
 
